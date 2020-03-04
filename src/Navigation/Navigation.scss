@@ -1,0 +1,44 @@
+@import '../styles/animations';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 12rem;
+
+  & > * {
+    animation: fadeIn 0.3s;
+  }
+  
+  span {
+    margin-right: 1rem;
+    font-size: 0.8rem;
+  }
+
+  button {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    background-color: #eee;
+    transition:
+      background-color linear 0.2s;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #ddd;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+}
