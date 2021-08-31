@@ -3820,7 +3820,7 @@ var app = (function () {
     	logo = new Logo({ $$inline: true });
 
     	search = new Search({
-    			props: { disabled: /*$details*/ ctx[0] },
+    			props: { disabled: !!/*$details*/ ctx[0] },
     			$$inline: true
     		});
 
@@ -3852,7 +3852,7 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			const search_changes = {};
-    			if (dirty & /*$details*/ 1) search_changes.disabled = /*$details*/ ctx[0];
+    			if (dirty & /*$details*/ 1) search_changes.disabled = !!/*$details*/ ctx[0];
     			search.$set(search_changes);
     		},
     		i: function intro(local) {
