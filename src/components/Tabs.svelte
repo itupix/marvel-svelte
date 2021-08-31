@@ -1,19 +1,26 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  export let items;
-  export let current;
+  export let items: string[] = [];
+  export let current: string = null;
 
   const dispatch = createEventDispatcher();
-  const onClick = (item) => () => dispatch("change", { item });
+  const onClick = (item: string) => () => dispatch("change", { item });
 
-  $: index = items.findIndex((item) => item === current);
+  let selected: HTMLElement = null;
+
+  $: shift = selected?.offsetLeft;
+  $: width = selected?.offsetWidth;
 </script>
 
 <nav class="tabs">
   {#each items as item}
-    <button on:click={onClick(item)}>{item}</button>
+    {#if item === current}
+      <button bind:this={selected} on:click={onClick(item)}>{item}</button>
+    {:else}
+      <button on:click={onClick(item)}>{item}</button>
+    {/if}
   {/each}
-  <div style={`transform: translateX(${5.5 * index}rem)`} />
+  <div style={`width: ${width}px; transform: translateX(${shift}px)`} />
 </nav>
 
 <style>
@@ -28,18 +35,17 @@
   div {
     content: "";
     position: absolute;
-    left: 1rem;
+    left: 0;
     bottom: -3px;
     width: 5.5rem;
     height: 5px;
     border-radius: 4px;
     background-color: #ec1d24;
-    transition: transform ease-in-out 0.3s;
+    transition: transform ease-in-out 0.3s, width ease-in-out 0.3s;
     will-change: transform;
   }
 
   button {
-    width: 5.5rem;
     padding: 1rem;
     text-align: center;
     font-size: 1rem;

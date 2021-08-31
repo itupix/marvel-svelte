@@ -1,20 +1,39 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import CloseButton from "components/CloseButton.svelte";
+  export let disabled = false;
+
   let query = null;
 
   const dispatch = createEventDispatcher();
+
   const onSubmit = (e: Event) => {
     e.preventDefault();
     dispatch("submit", { query });
   };
+
+  const clear = (e: Event) => {
+    query = null;
+    onSubmit(e);
+  };
 </script>
 
-<form class="search" on:submit={onSubmit}>
-  <input type="text" bind:value={query} />
-  <input type="submit" value="🔎" />
+<form class="search" on:submit={onSubmit} class:disabled>
+  <input {disabled} type="text" bind:value={query} />
+  <input {disabled} type="submit" value="🔎" />
+  {#if query}
+    <CloseButton class="clear" on:click={clear} />
+  {/if}
 </form>
 
 <style>
+  form {
+    transition: opacity linear 0.2s;
+  }
+  .disabled {
+    opacity: 0.5;
+  }
+
   .search {
     flex: 0 1 20rem;
     position: relative;
@@ -32,7 +51,7 @@
 
   [type="text"] {
     width: 100%;
-    padding: 0.5rem 3rem 0.5rem 1.25rem;
+    padding: 0.5rem 3rem;
     border: 1px solid #ccc;
     border-radius: 1.25rem;
     height: 2.5rem;
@@ -48,7 +67,7 @@
   [type="submit"] {
     position: absolute;
     top: 1px;
-    right: 1px;
+    left: 0.5rem;
     width: calc(2.5rem - 2px);
     height: calc(2.5rem - 2px);
     cursor: pointer;
@@ -58,5 +77,13 @@
 
   [type="submit"]:focus {
     background-color: #ddd;
+  }
+
+  :global(.clear) {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    background-color: #ccc;
+    transform: translateY(-50%);
   }
 </style>

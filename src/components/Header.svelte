@@ -13,7 +13,7 @@
 
 <header>
   <Logo />
-  <Search on:submit={onSubmit} />
+  <Search disabled={$details} on:submit={onSubmit} />
   <Navigation />
 </header>
 
