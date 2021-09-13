@@ -7,13 +7,12 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import alias from '@rollup/plugin-alias';
+import json from '@rollup/plugin-json';
 
 const aliases = alias({
 	resolve: ['.svelte', '.js', '.ts'],
 	entries: [
 		{ find: 'components', replacement: 'src/components' },
-		{ find: 'enums', replacement: '/Users/jeromeboukorras/Dev/marvel-svelte/src/enums' },
-		{ find: 'shared', replacement: '/Users/jeromeboukorras/Dev/marvel-svelte/src/shared' },
 		{ find: '', replacement: 'src' },
 	]
 });
@@ -50,7 +49,7 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
-		aliases,
+		json(),
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
 			compilerOptions: {
@@ -74,7 +73,8 @@ export default {
 		commonjs(),
 		typescript({
 			sourceMap: !production,
-			inlineSources: !production
+			inlineSources: !production,
+			rootDir: './src'
 		}),
 
 		// In dev mode, call `npm run start` once

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { getThumbnailSrc } from "shared/getThumbnailSrc";
-  import { details } from "shared/stores";
-  import type { CharacterDetailsType } from "types/CharacterDetailsType";
+  import { getThumbnailSrc } from "../shared/getThumbnailSrc";
+  import { details } from "../shared/stores";
+  import type { CharacterDetailsType } from "../types/CharacterDetailsType";
 
   export let character: CharacterDetailsType;
 

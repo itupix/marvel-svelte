@@ -1,9 +1,9 @@
 <script lang="ts">
-  import CharacterDetails from "components/CharacterDetails.svelte";
-  import Characters from "components/Characters.svelte";
-  import Error from "components/Error.svelte";
-  import Header from "components/Header.svelte";
-  import Loader from "components/Loader.svelte";
+  import CharacterDetails from "./CharacterDetails.svelte";
+  import Characters from "./Characters.svelte";
+  import Error from "./Error.svelte";
+  import Header from "./Header.svelte";
+  import Loader from "./Loader.svelte";
   import { fetchCharacters } from "shared/services";
   import { offset, query } from "shared/stores";
 </script>

@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import type { CharacterDetailsType } from 'types/CharacterDetailsType';
+import type { CharacterDetailsType } from '../types/CharacterDetailsType';
 
 export const query = writable<string>(null);
 export const total = writable<number>(null);

@@ -1,4 +1,4 @@
-import type { ThumbnailType } from "types/ThumbnailType";
+import type { ThumbnailType } from "../types/ThumbnailType";
 
 export const getThumbnailSrc = (thumbnail: ThumbnailType, size: string) =>
     thumbnail ?

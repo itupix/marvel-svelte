@@ -1,9 +1,9 @@
 <script lang="ts">
-  import BookList from "components/BookList.svelte";
-  import Error from "components/Error.svelte";
-  import Loader from "components/Loader.svelte";
-  import { fetchCollection } from "shared/services";
-  import { details } from "shared/stores";
+  import BookList from "./BookList.svelte";
+  import Error from "./Error.svelte";
+  import Loader from "./Loader.svelte";
+  import { fetchCollection } from "../shared/services";
+  import { details } from "../shared/stores";
 
   export let category: string;
 </script>

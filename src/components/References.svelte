@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Collection from "components/Collection.svelte";
-  import Tabs from "components/Tabs.svelte";
-  import { CategoriesEnum } from "enums/CategoriesEnum";
+  import Collection from "./Collection.svelte";
+  import Tabs from "./Tabs.svelte";
+  import { CategoriesEnum } from "../enums/CategoriesEnum";
 
   let current: string = CategoriesEnum.comics;
 

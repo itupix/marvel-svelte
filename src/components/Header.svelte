@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Logo from "components/Logo.svelte";
-  import Navigation from "components/Navigation.svelte";
-  import Search from "components/Search.svelte";
+  import Logo from "./Logo.svelte";
+  import Navigation from "./Navigation.svelte";
   import { details, offset, query } from "shared/stores";
+  import Search from "./Search.svelte";
 
   const onSubmit = ({ detail }) => {
     details.set(null);
@@ -13,7 +13,7 @@
 
 <header>
   <Logo />
-  <Search disabled={!!$details} on:submit={onSubmit} />
+  <Search on:submit={onSubmit} disabled={!!$details} />
   <Navigation />
 </header>
 

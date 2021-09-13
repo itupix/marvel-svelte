@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Bio from "components/Bio.svelte";
-  import CloseButton from "components/CloseButton.svelte";
-  import References from "components/References.svelte";
-  import { details } from "shared/stores";
+  import Bio from "./Bio.svelte";
+  import CloseButton from "./CloseButton.svelte";
+  import References from "./References.svelte";
+  import { details } from "../shared/stores";
   import { fly } from "svelte/transition";
 
   $: isOpen = !!$details;

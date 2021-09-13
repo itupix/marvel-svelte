@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { details, offset, total } from "shared/stores";
+  import { details, offset, total } from "../shared/stores";
   import { fade } from "svelte/transition";
 
   $: isFirst = $offset === 0;
@@ -24,6 +24,7 @@
     justify-content: flex-end;
     width: 12rem;
     justify-self: end;
+    margin-left: auto;
   }
 
   span {

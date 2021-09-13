@@ -1,4 +1,4 @@
-import type { CharacterDetailsType } from 'types/CharacterDetailsType';
+import type { CharacterDetailsType } from '../types/CharacterDetailsType';
 import { apiKey } from './config';
 import { offset, total } from './stores';
 

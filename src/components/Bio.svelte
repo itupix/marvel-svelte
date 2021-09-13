@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getThumbnailSrc } from "shared/getThumbnailSrc";
-  import { details } from "shared/stores";
+  import { getThumbnailSrc } from "../shared/getThumbnailSrc";
+  import { details } from "../shared/stores";
 </script>
 
 <div class="bio">

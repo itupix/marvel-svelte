@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Character from "components/Character.svelte";
-  import Error from "components/Error.svelte";
+  import Character from "./Character.svelte";
+  import Error from "./Error.svelte";
   import { fade } from "svelte/transition";
-  import type { CharacterDetailsType } from "types/CharacterDetailsType";
+  import type { CharacterDetailsType } from "../types/CharacterDetailsType";
 
   export let characters: CharacterDetailsType[];
 </script>

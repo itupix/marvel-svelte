@@ -4,6 +4,7 @@
     "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*"

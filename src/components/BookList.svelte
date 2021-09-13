@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getThumbnailSrc } from "shared/getThumbnailSrc";
-  import type { CollectionType } from "types/Collectiontype";
+  import { getThumbnailSrc } from "../shared/getThumbnailSrc";
+  import type { CollectionType } from "../types/Collectiontype";
   export let collection: CollectionType[];
 </script>
 
